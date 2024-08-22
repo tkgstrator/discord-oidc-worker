@@ -1,0 +1,14 @@
+services:
+  discord_oidc_worker:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        BUN_VERSION: 1.1.24
+    volumes:
+      - node_modules:/home/bun/app/node_modules
+      - ../:/home/bun/app:cached
+    stdin_open: true
+
+volumes:
+  node_modules:

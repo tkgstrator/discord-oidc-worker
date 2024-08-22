@@ -2,16 +2,23 @@
   "name": "discord-oidc-worker",
   "version": "1.0.1",
   "description": "Discord OIDC Wrapper in CF Workers",
-  "main": "worker.js",
+  "main": "src/index.js",
   "scripts": {
-    "start": "wrangler dev --local",
-    "deploy": "wrangler deploy"
+    "dev": "wrangler dev --local",
+    "deploy": "wrangler deploy",
+    "format": "bunx @biomejs/biome format src",
+    "format:fix": "bunx @biomejs/biome format --write src",
+    "lint": "bunx @biomejs/biome lint src",
+    "lint:fix": "bunx @biomejs/biome lint --write src"
   },
   "author": "Erisa A <erisa@erisa.uk>",
   "license": "MIT",
   "dependencies": {
-    "hono": "^4.0.0",
-    "jose": "^5.2.1",
-    "wrangler": "^3.28.1"
+    "hono": "^4.5.8",
+    "jose": "^5.7.0",
+    "wrangler": "^3.72.2"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.8.3"
   }
 }
